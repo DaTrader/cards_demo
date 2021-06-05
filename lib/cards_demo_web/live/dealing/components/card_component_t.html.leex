@@ -1,0 +1,6 @@
+<div id="dln-card-<%= @id %>" data-sort="<%= updated_sort( @updated) %>" phx-update="<%= phx_update( @card_update) %>" phx-hook="DlnCardHook">
+  <div id="dln-card-title-<%= @id %>">Some title <%= @id %></div>
+  <%= for entry_assigns <- @entries do %>
+    <%= live_component @socket, CardsDemoWeb.Dealing.EntryComponent, entry_assigns %>
+  <% end %>
+</div>

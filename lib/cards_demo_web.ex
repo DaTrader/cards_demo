@@ -44,8 +44,7 @@ defmodule CardsDemoWeb do
 
   def live_view do
     quote do
-      use Phoenix.LiveView,
-        layout: {CardsDemoWeb.LayoutView, "live.html"}
+      use Phoenix.LiveView #, layout: {CardsDemoWeb.LayoutView, "live.html"}
 
       unquote(view_helpers())
     end
@@ -89,6 +88,7 @@ defmodule CardsDemoWeb do
 
       import CardsDemoWeb.ErrorHelpers
       import CardsDemoWeb.Gettext
+      import CardsDemoWeb.ViewHelpers
       alias CardsDemoWeb.Router.Helpers, as: Routes
     end
   end

@@ -1,0 +1,13 @@
+<div id="dln-main">
+  <%= if @deck do %>
+    <div id="dln-deck" class="<%= !@deck_visible? && :hidden || nil %>"
+         phx-update="<%= phx_update( @deck_update) %>" phx-hook="DlnDeckHeadHook">
+      <%= for card_assigns <- @cards do %>
+        <%= live_component @socket, CardsDemoWeb.Dealing.CardComponent, card_assigns %>
+      <% end %>
+    </div>
+    <div id="dln-deck_tail" class="hidden" phx-hook="DlnDeckTailHook"
+      data-print="<%= update_print( assigns) %>">
+    </div>
+  <% end %>
+</div>

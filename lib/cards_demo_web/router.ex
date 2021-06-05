@@ -17,7 +17,7 @@ defmodule CardsDemoWeb.Router do
   scope "/", CardsDemoWeb do
     pipe_through :browser
 
-    live "/", PageLive, :index
+    live "/dealing", Dealing.DeckLive
   end
 
   # Other scopes may use custom stacks.
